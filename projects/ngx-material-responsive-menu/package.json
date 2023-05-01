@@ -2,6 +2,25 @@
   "name": "ngx-material-responsive-menu",
   "version": "1.0.0",
   "description": "This the easy responsive menu using angular material with flex-layout. This libray is Easy to use for angular application",
+  "keywords": [
+    "Matrial",
+    "mat",
+    "mat-menu",
+    "responsive",
+    "angular",
+    "angular-responsive-menu",
+    "matrial-menu",
+    "matrial-responsive-menu"
+  ],
+  "author": {
+    "name": "Kannan S",
+    "email": "kannan-inbox@outlook.com",
+    "url": "https://github.com/kannansgithub"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/kannansgithub/ngx-material-responsive-menu"
+  },
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"
