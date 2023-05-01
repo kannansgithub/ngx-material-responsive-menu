@@ -1,0 +1,56 @@
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav [opened]="IsSidebarActive" class="fixedWidth">
+    <mat-nav-list>
+      <span *ngFor="let item of navItems">
+        <span *ngIf="item.children && item.children.length > 0">
+          <ng-container
+            [ngTemplateOutlet]="childMenu"
+            [ngTemplateOutletContext]="{ menu: item }"
+          >
+          </ng-container>
+        </span>
+        <span *ngIf="!item.children || item.children.length === 0">
+          <ng-container
+            [ngTemplateOutlet]="parentMenu"
+            [ngTemplateOutletContext]="{ menu: item }"
+          >
+          </ng-container>
+        </span>
+      </span>
+    </mat-nav-list>
+    <ng-template #parentMenu let-menu="menu">
+      <mat-list-item
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="[menu.route]"
+        routerLinkActive="active"
+      >
+        <mat-icon
+          matListItemIcon
+          class="mat-child-icon"
+          *ngIf="menu.iconName"
+          >{{ menu.iconName }}</mat-icon
+        >
+        <div matListItemTitle class="mat-child-text">
+          {{ menu.displayName }}
+        </div>
+      </mat-list-item>
+    </ng-template>
+    <ng-template #childMenu let-menu="menu">
+      <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title *ngIf="menu.iconName">
+            <mat-icon class="material-icons">{{ menu.iconName }}</mat-icon>
+          </mat-panel-title>
+          <mat-panel-description class="mat-child-text">
+            {{ menu.displayName }}</mat-panel-description
+          >
+        </mat-expansion-panel-header>
+        <side-navbar-item #menu [items]="menu.children"></side-navbar-item>
+      </mat-expansion-panel>
+    </ng-template>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill
+    ><router-outlet></router-outlet
+  ></mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,11 @@
+<top-navbar
+  [navItems]="navBarMenuItems"
+  [IsSidebarActive]="isSidebarActive"
+  [menuBarColor]="menuBarColor"
+  (onSidebarToggle)="onSidebarToggle()"
+></top-navbar>
+<side-navbar
+  [navItems]="navBarMenuItems"
+  [IsSidebarActive]="isSidebarActive"
+  (onSidebarToggle)="onSidebarToggle()"
+></side-navbar>

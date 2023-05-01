@@ -1,0 +1,15 @@
+{
+  "name": "ngx-material-responsive-menu",
+  "version": "1.0.0",
+  "description": "This the easy responsive menu using angular material with flex-layout. This libray is Easy to use for angular application",
+  "peerDependencies": {
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@angular/material": "^15.2.8",
+    "@angular/flex-layout": "^15.0.0-beta.42"
+  },
+  "sideEffects": false
+}

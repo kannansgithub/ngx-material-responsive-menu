@@ -1,0 +1,17 @@
+.fixedWidth {
+  min-width: 275px !important;
+  max-width: 300px !important;
+}
+mat-panel-title {
+  flex-basis: 0;
+}
+mat-panel-description {
+  flex-basis: 100%;
+}
+.mat-child-icon {
+  color: #000 !important;
+  margin: 0px 18px 0 22px !important;
+}
+.mat-child-text {
+  color: #000;
+}
